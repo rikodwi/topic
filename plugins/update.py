@@ -5,7 +5,9 @@ from clients import Client
 
 from controllers import group
 
-@Client.on_message(filters.group)
+@Client.on_message(~filters.command([
+    'addtour', 
+]) & filters.group)
 async def update_message(c: Client, m: types.Message):
     if not m.is_topic_message:
         await c.leave_chat(m.chat.id)
