@@ -1,0 +1,5 @@
+python-dotenv
+tgcrypto
+pyrofork
+beanie
+pytz
