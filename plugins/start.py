@@ -245,7 +245,7 @@ async def addtour_handler(c: Client, m: types.Message):
                     if data:
                         p =  await m.reply(f"{m.from_user.first_name} diizinkan")
                         await m.delete()
-                        await asyncio.sleep(5)
+                        await asyncio.sleep(300)
                         await p.delete()
                         return
                     
