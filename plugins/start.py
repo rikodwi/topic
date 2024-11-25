@@ -231,8 +231,8 @@ async def untopic_handler(c: Client, m: types.Message):
     except Exception as e:
         await m.reply(f"Terjadi kesalahan lek: str{e}")
         
-@Client.on_message(filters.command('addtour') & filters.group)
-async def addtour_handler(c: Client, m: types.Message):
+@Client.on_message(filters.command('addaccess') & filters.group)
+async def access_handler(c: Client, m: types.Message):
     try:
         member = await c.get_chat_member(m.chat.id, m.from_user.id)
         if member.status == enums.ChatMemberStatus.MEMBER:
@@ -241,7 +241,7 @@ async def addtour_handler(c: Client, m: types.Message):
                 if not groups:
                     return
                 if any(existing_topic.id == m.message_thread_id for existing_topic in groups.topics):
-                    data = await group.add_tour(m.chat.id, m.from_user.id)
+                    data = await group.add_access(m.chat.id, m.from_user.id)
                     if data:
                         p =  await m.reply(f"{m.from_user.first_name} diizinkan")
                         await m.delete()
@@ -257,9 +257,9 @@ async def addtour_handler(c: Client, m: types.Message):
         await m.delete()
         return
     except BaseException as e:
-        print("Terjadi error saat menggunakan /addtour")
+        print("Terjadi error saat menggunakan /addaccess")
         print(e)
     
-@Client.on_message(filters.command('addtour') & filters.private)
+@Client.on_message(filters.command('addaccess') & filters.private)
 async def wkkw(_, m):
     await m.reply('Lakukan di grup lek')

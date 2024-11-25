@@ -6,7 +6,7 @@ from clients import Client
 from controllers import group
 
 @Client.on_message(~filters.command([
-    'addtour', 
+    'addaccess', 
 ]) & filters.group)
 async def update_message(c: Client, m: types.Message):
     if not m.is_topic_message:

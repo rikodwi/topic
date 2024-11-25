@@ -35,7 +35,7 @@ async def add_topic(chat_id: int, topic_id: int, title: str):
         return False
     return group
 
-async def add_tour(chat_id: int, from_id: int):
+async def add_access(chat_id: int, from_id: int):
     group = await get_group(chat_id)
     if group:
         for topic in group.topics:

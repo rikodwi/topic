@@ -6,7 +6,7 @@ commands_owner = [
     types.BotCommand(command="mygroups", description="My Groups"),
     types.BotCommand(command="addtopic", description="Add Topic"),
     types.BotCommand(command="deltopic", description="Hapus Topic"),
-    types.BotCommand(command="addtour", description="Acc Chat"),
+    types.BotCommand(command="addaccess", description="Acc Chat"),
 ]
 
 class Client(RawClient):
